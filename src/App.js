@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-// --- firebase
-import firebase from 'firebase/app'
+// -- firebase
+import firebase from 'firebase/compat/app'
 import 'firebase/auth'
+
 // --- component
 import Home from './pages/Home'
 import Signin from './pages/Signin'
@@ -15,6 +16,11 @@ import PageNotFound from './pages/PageNotFound'
 import { UserContext } from './contexts/context/UserContext'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
+
+import firebaseConfig from './Config/firebaseConfig'
+
+//init firebase
+firebase.initializeApp(firebaseConfig)
 
 const App = () => {
   const [user, setUser] = useState(null)
