@@ -42,7 +42,30 @@ const Home = () => {
   }
   return (
     <div>
-      <h1>Home page</h1>
+      <Container>
+        <Row className=' mt-3'>
+          <Col md='5'>
+            <InputGroup>
+              <Input
+                type='text'
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder='Please provide the username'
+              />
+              <InputGroupAddon addonType='append'>
+                <Button onClick={fetchDetails} color='primary'>
+                  Fetch User
+                </Button>
+              </InputGroupAddon>
+            </InputGroup>
+
+            {/* component call + prop pass */}
+            {user ? <UserCard user={user} /> : null}
+          </Col>
+          {/* component call + prop pass */}
+          <Col md='7'>{user ? <Repos repos_url={user.repos_url} /> : null}</Col>
+        </Row>
+      </Container>
     </div>
   )
 }
