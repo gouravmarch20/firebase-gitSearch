@@ -37,8 +37,6 @@ const Home = () => {
   if (!context.user?.uid) {
     toast('must be login ', { type: 'error' })
     return <Redirect to='/signin' />
-  } else {
-    toast('sucessfully login ', { type: 'success' })
   }
   return (
     <div>
