@@ -16,12 +16,14 @@ import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import PageNotFound from './pages/PageNotFound'
 import { UserContext } from './contexts/context/UserContext'
+
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 
 import firebaseConfig from './Config/firebaseConfig'
-dotenv.config()
 
+//-- must at last
+dotenv.config()
 //init firebase
 firebase.initializeApp(firebaseConfig)
 
